@@ -68,12 +68,12 @@ const updateCustomer = async (req, res) => {
             message: "No existe el cliente"
         });
 
-        const customerExistsWithEmail = await Customer.exists({email})
-        if (customerExistsWithEmail)
-        return res.status(404).json({
-            ok: false,
-            message: "El correo electronico ya se encuentra registrado"
-        })
+        //const customerExistsWithEmail = await Customer.exists({email})
+        //if (customerExistsWithEmail)
+        //return res.status(404).json({
+          //  ok: false,
+            //message: "El correo electronico ya se encuentra registrado"
+        //})
 
         const customerUpdated = await Customer.findByIdAndUpdate(
             id, 
