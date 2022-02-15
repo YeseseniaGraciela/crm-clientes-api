@@ -1,6 +1,7 @@
 const express = require("express")
 const morgan = require("morgan")
 const cors = require("cors")
+const config = require("./config")
 const DBConnection = require("./database/DBConnection")
 const productRoutes = require("./routes/product.routes")
 const customerRoutes = require("./routes/Customer.routes")
@@ -24,10 +25,9 @@ async function startExpressServer(params){
 
     })
 
-    await DBConnection()
-    const PORT = 4000
+    await DBConnection(),
 
-    app.listen(PORT, ()=>{
+    app.listen(config.port, ()=>{
         console.log(`Server listo en http://localhost:${PORT}`)
     })
 }
