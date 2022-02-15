@@ -28,7 +28,7 @@ async function startExpressServer(params){
     await DBConnection(),
 
     app.listen(config.port, ()=>{
-        console.log(`Server listo en http://localhost:${PORT}`)
+        console.log(`Server listo en http://localhost:${config.port}`)
     })
 }
 startExpressServer();
